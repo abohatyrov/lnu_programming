@@ -1,0 +1,31 @@
+Store_1 order: 
+Bread
+10
+food
+Christmas tree
+1300
+decoration
+
+Store_2 order: 
+Egg
+2
+food
+Bread
+10
+food
+Matches
+2
+households
+
+Store_3 order: 
+Bread
+10
+food
+Egg
+2
+food
+
+Most popular item:
+Bread
+10
+food

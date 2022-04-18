@@ -1,0 +1,24 @@
+2
+3
+2
+Bread
+10
+food
+Christmas tree
+1300
+decoration
+Egg
+2
+food
+Bread
+10
+food
+Matches
+2
+households
+Bread
+10
+food
+Egg
+2
+food
