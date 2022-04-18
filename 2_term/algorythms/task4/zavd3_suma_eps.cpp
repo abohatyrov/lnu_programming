@@ -7,19 +7,22 @@ double power(double x, int n);
 
 int main()
 {
-    int n = 1;
-    double arctg = 0, x = 0.4, eps = 0.002;
+    int n = 0;
+    double a = 0, x, eps, k = 1;
 
-    while (fabs(arctg) >= eps)
+    cout << "Enter x: "; cin >> x;
+    cout << "Enter eps: "; cin >> eps;
+
+    do
     {
-        int k;
-        n % 2 == 0 ? k = 1 : k = -1;
-        cout << k;
-
-        arctg += k * (power(x, 2 * n + 1) / (2 * n + 1));
+        a += k * (power(x, 2 * n + 1) / (2 * n + 1));
+        cout << "a = " << a;
+        cout << "\t|arctg(x) - a| = " << fabs(atan(x) - a) << endl;
         n++;
-    }
-    cout << arctg;
+        k *= -1;
+    } while (fabs(atan(x) - a) >= eps);
+
+    cout << "Result: \na = " << a << "\tarctg(x) = " << atan(x) << endl;
 }
 
 double power(double x, int n)
