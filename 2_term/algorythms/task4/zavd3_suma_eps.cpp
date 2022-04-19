@@ -15,7 +15,7 @@ int main()
 
     do
     {
-        a += k * (power(x, 2 * n + 1) / (2 * n + 1));
+        a += k * (pow(x, 2 * n + 1) / (2 * n + 1));
         cout << "a = " << a;
         cout << "\t|arctg(x) - a| = " << fabs(atan(x) - a) << endl;
         n++;
@@ -28,7 +28,7 @@ int main()
 double power(double x, int n)
 {
     double y = 1;
-    for (int i = 1; i <= n; i++)
+    for (int i = 0; i < n; i++)
         y *= x;
     return y;
 }
