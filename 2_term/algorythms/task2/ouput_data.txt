@@ -1,0 +1,22 @@
+First polynom: x^2 + x + 1 
+Second polynom: x^3 + x^2 + x + 1 
+
+Sum (+):
+x^3 + 2x^2 + 2x + 2 
+Value: 7
+
+Difference (-):
+- x^3 
+Value: -1
+
+Product (*):
+x^5 + 2x^4 + 3x^3 + 3x^2 + 2x + 1 
+Value: 12
+
+Derivative 1:
+2x + 1 
+Value: 3
+
+Derivative 2:
+3x^2 + 2x + 1 
+Value: 6
