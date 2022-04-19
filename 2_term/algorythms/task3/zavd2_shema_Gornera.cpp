@@ -19,13 +19,6 @@ int main()
     fin >> pol2;
     fin >> x;
     
-    // Polynom pol3 = Polynom(pol1);
-    // Polynom pol4 = Polynom(pol2);
-    // Polynom pol5 = Polynom(pol3);
-    // Polynom pol6 = Polynom(pol4);
-    // Polynom pol7 = Polynom(pol5);
-    // Polynom pol8 = Polynom(pol6);
-
     // Create new polynoms and do operations
     Polynom pol_sum = pol1 + pol2;
     Polynom pol_diff = pol1 - pol2;
