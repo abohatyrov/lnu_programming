@@ -19,17 +19,17 @@ int main()
     fin >> pol2;
     fin >> x;
     
-    Polynom pol3 = Polynom(pol1);
-    Polynom pol4 = Polynom(pol2);
-    Polynom pol5 = Polynom(pol3);
-    Polynom pol6 = Polynom(pol4);
-    Polynom pol7 = Polynom(pol5);
-    Polynom pol8 = Polynom(pol6);
+    // Polynom pol3 = Polynom(pol1);
+    // Polynom pol4 = Polynom(pol2);
+    // Polynom pol5 = Polynom(pol3);
+    // Polynom pol6 = Polynom(pol4);
+    // Polynom pol7 = Polynom(pol5);
+    // Polynom pol8 = Polynom(pol6);
 
     // Create new polynoms and do operations
-    Polynom pol_sum = pol3 + pol4;
-    Polynom pol_diff = pol5 - pol6;
-    Polynom pol_mult = pol7 * pol8;
+    Polynom pol_sum = pol1 + pol2;
+    Polynom pol_diff = pol1 - pol2;
+    Polynom pol_mult = pol1 * pol2;
     Polynom pol_der1 = pol1.derivative();
     Polynom pol_der2 = pol2.derivative();
 

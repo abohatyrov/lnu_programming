@@ -12,9 +12,9 @@ public:
     Polynom(){}; // Empty constructor
     Polynom(const Polynom& pol); // Copy constructor
     Polynom(int count); // Empty constructor with power
-    Polynom operator+(Polynom& pol); // Sum operation
-    Polynom operator-(Polynom& pol); // Subtraction operation
-    Polynom operator*(Polynom& pol); // Multiplication operation
+    Polynom operator+(Polynom pol); // Sum operation
+    Polynom operator-(Polynom pol); // Subtraction operation
+    Polynom operator*(Polynom pol); // Multiplication operation
     Polynom derivative(); // Find derivative
     double value(double x); // Find value of polynom (Horner's method)
     friend istream& operator >>(istream& os, Polynom& pol); // Input polynom
@@ -35,7 +35,7 @@ Polynom::Polynom(const Polynom& pol)
             a[i] = pol.a[i];
 }
 
-Polynom Polynom::operator+(Polynom& pol)
+Polynom Polynom::operator+(Polynom pol)
 { // Sum operation
     Polynom temp = Polynom();
 
@@ -55,7 +55,7 @@ Polynom Polynom::operator+(Polynom& pol)
     return temp;
 }
 
-Polynom Polynom::operator-(Polynom& pol)
+Polynom Polynom::operator-(Polynom pol)
 { // Subtraction operation
     Polynom temp = Polynom();
     int min_n = 0;
@@ -77,7 +77,7 @@ Polynom Polynom::operator-(Polynom& pol)
     return temp;
 }
 
-Polynom Polynom::operator*(Polynom& pol)
+Polynom Polynom::operator*(Polynom pol)
 { // Multiplication operation
     Polynom temp(n + pol.n);
 
@@ -141,9 +141,23 @@ ostream& operator <<(ostream& os, Polynom& pol)
             if (i == pol.n)
             {
                 if (i == 1)
-                    os << pol.a[i] << "x ";
+                    if (pol.a[i] == 1)
+                        os << "x ";
+                    else if (pol.a[i] == -1)
+                        os << "- x ";
+                    else if (pol.a[i] > 0)
+                        os << pol.a[i] << "x ";
+                    else
+                        os << "- " << pol.a[i] * -1 << "x ";
                 else
-                    os << pol.a[i] << "x^" << i << ' ';
+                    if (pol.a[i] == 1)
+                        os << "x^" << i << ' ';
+                    else if (pol.a[i] == -1)
+                        os << "- x^" << i << ' ';
+                    else if (pol.a[i] > 0)
+                        os << pol.a[i] << "x^" << i << ' ';
+                    else
+                        os << pol.a[i] * -1 << "x^" << i << ' ';
             }
             else if (i == 0)
             {

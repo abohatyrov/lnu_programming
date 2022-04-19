@@ -10,8 +10,8 @@ int main()
     int n = 0;
     double a = 0, x, eps, k = 1;
 
-    cout << "Enter x: "; cin >> x;
-    cout << "Enter eps: "; cin >> eps;
+    cout << "Enter |x| < 1: "; cin >> x;
+    cout << "Enter eps > 1: "; cin >> eps;
 
     do
     {
