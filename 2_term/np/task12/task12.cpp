@@ -8,8 +8,8 @@ void BubbleSort(Consumer*, int);
 
 int main()
 {
-    ifstream fin("D:\\Study\\Programming\\C++\\2_term\\np\\task12\\input.txt");
-    ofstream fout("D:\\Study\\Programming\\C++\\2_term\\np\\task12\\output.txt");
+    ifstream fin("input.txt");
+    ofstream fout("output.txt");
     
     int n;
     cout << "Enter size of arrey: "; cin >> n;
@@ -28,6 +28,7 @@ int main()
         fout << "Changed debt: " << debt << "\n\n";
     }
 
+    cout << "Success\n";
     fin.close();
     fout.close();
 }
@@ -41,6 +42,5 @@ void BubbleSort(Consumer* con, int n)
                 Consumer temp = con[j];
                 con[j] = con[j + 1];
                 con[j + 1] = temp;
-                cout << temp;
             }
 }
