@@ -131,29 +131,12 @@ void Consumer::print(ostream& os)
 
 istream& operator >>(istream& is, Consumer& con)
 {
-    // // cout << "Enter consumer number (2): "; 
-    // is >> con.consumerNumber;
-    // // cout << "Enter your address: "; 
-    // getline(is >> ws, con.address);
-    // // cout << "Enter mobile number (8): "; 
-    // is >> con.mobileNumber;
-    // while (!con.CheckNumber()) 
-    // {
-    //     // cout << "Wrong number! Try again\n" << "Enter mobile number (8): ";
-    //     is >> con.mobileNumber;
-    // }
-    // // cout << "Enter your debt: "; 
-    // is >> con.debt;
     con.input(is);
     return is;
 }
 
 ostream& operator <<(ostream& os, Consumer& con)
 {
-    // os << "Consumer number: " << con.consumerNumber << endl;
-    // os << "Your address: " << con.address << endl;
-    // os << "Mobile number: +" << con.mobileNumber << endl;
-    // os << "Your debt: " << con.debt << endl;
     con.print(os);
     return os;
 }
