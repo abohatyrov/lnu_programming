@@ -86,7 +86,6 @@ void Consumer::ChangeDebt(int percent)
 
 istream& operator >>(istream& is, Consumer& con)
 {
-    long mobileNumber;
     cout << "Enter consumer number (2): "; is >> con.consumerNumber;
     cout << "Enter your address: "; getline(is >> ws, con.address);
     cout << "Enter mobile number (8): "; is >> con.mobileNumber;

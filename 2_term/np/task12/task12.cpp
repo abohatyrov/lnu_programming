@@ -12,7 +12,8 @@ int main()
     ofstream fout("output.txt");
     
     int n;
-    cout << "Enter size of arrey: "; cin >> n;
+    // cout << "Enter size of arrey: "; cin >> n;
+    fin >> n;
 
     Consumer* con = new Consumer[n];
     for (size_t i = 0; i < n; i++)
