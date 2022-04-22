@@ -1,4 +1,5 @@
 // Похідні класи “Юридичний” (поле: кількість телефонних номерів) та “Фізичний” (поле: прізвище, ім’я, по-батькові у вигляді однієї стрічки).
+#pragma once
 #include <iostream>
 #include <string>
 #include "consumer_sub.h"
@@ -8,7 +9,7 @@ using namespace std;
 class Legal : public Consumer
 {
 private:
-    string;
+    int countOfNumbers;
 public:
     Legal();
     Legal(int, string, long, int, int);
@@ -48,7 +49,7 @@ void Legal::SetCountOfNumbers(int _con) { countOfNumbers = _con; }
 void Legal::ChangeDebt(int const percent)
 {
     Consumer::ChangeDebt(percent);
-    Consumer::SetDebt(Consumer::GetDebt() - Consumer::GetDebt() * (countOfNumbers / 5 * 10));
+    SetDebt(GetDebt() - GetDebt() * ((countOfNumbers / 5 * 10) / 100.0));
 }
 
 void Legal::input(istream& is)

@@ -1,4 +1,5 @@
 // Похідні класи “Юридичний” (поле: кількість телефонних номерів) та “Фізичний” (поле: прізвище, ім’я, по-батькові у вигляді однієї стрічки).
+#pragma once
 #include <iostream>
 #include <string>
 #include "consumer_sub.h"
@@ -56,25 +57,30 @@ string Individual::BreakIntoWords()
 {
     int pos = 0, pos1;
     string str = "";
-    for (int i = 0; i < sizeof(fullName); i++)
+    for (int i = 0; i < fullName.length(); i++)
+    {
         if (fullName[i] == ' ')
         {
             pos1 = i;
-            str += fullName.substr(pos, pos1 - pos);
+            str += fullName.substr(pos, pos1 - pos) + '\n';
             pos = pos1 + 1;
         }
+        else if (i == fullName.length() - 1)
+            str += fullName.substr(pos, fullName.length() - pos) + '\n';
+    }
+    return str;
 }
 
 void Individual::input(istream& is)
 {
     Consumer::input(is);
-    is >> fullName;
+    getline(is >> ws, fullName);
 }
 
 void Individual::print(ostream& os)
 {
+    os << "Full name:\n" << BreakIntoWords();
     Consumer::print(os);
-    os << "Full name: " << fullName << endl;
 }
 
 istream& operator >>(istream& is, Individual& leg)
