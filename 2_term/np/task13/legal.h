@@ -8,7 +8,7 @@ using namespace std;
 class Legal : public Consumer
 {
 private:
-    int countOfNumbers;
+    string;
 public:
     Legal();
     Legal(int, string, long, int, int);
@@ -16,6 +16,8 @@ public:
 
     int GetCountOfNumbers();
     void SetCountOfNumbers(int);
+
+    void ChangeDebt(int const) override;
 
     void input(istream&) override;
     void print(ostream&) override;
@@ -42,6 +44,12 @@ Legal::Legal(Legal& leg):Consumer(leg.GetConsumerNumber(), leg.GetAddress(), leg
 int Legal::GetCountOfNumbers() { return countOfNumbers; }
 
 void Legal::SetCountOfNumbers(int _con) { countOfNumbers = _con; }
+
+void Legal::ChangeDebt(int const percent)
+{
+    Consumer::ChangeDebt(percent);
+    Consumer::SetDebt(Consumer::GetDebt() - Consumer::GetDebt() * (countOfNumbers / 5 * 10));
+}
 
 void Legal::input(istream& is)
 {

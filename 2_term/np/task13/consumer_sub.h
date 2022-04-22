@@ -4,6 +4,7 @@
 // Описати метод обрахунку пільгової вартості для першого класу з урахуванням того, що за кожні 5 номерів надають знижку 10 %. Для другого класу додати метод, який ділить поле класу на три окремі стрічки.
 #include <iostream>
 #include <string>
+#include <cmath>
 using namespace std;
 
 class Consumer
@@ -29,7 +30,7 @@ public:
     int GetDebt();
 
     bool CheckNumber();
-    void ChangeDebt(int);
+    virtual void ChangeDebt(int const);
 
     bool operator==(Consumer);
     bool operator>(Consumer);
@@ -37,7 +38,7 @@ public:
     bool operator<(Consumer);
     bool operator<=(Consumer);
     void operator=(Consumer);
-    operator string();
+    operator string() const;
 
     virtual void input(istream&);
     virtual void print(ostream&);
@@ -84,9 +85,9 @@ bool Consumer::CheckNumber()
     return mobileNumber / 100000000 == 0 && mobileNumber / 1000000 == consumerNumber ? true : false;
 }
 
-void Consumer::ChangeDebt(int percent)
+void Consumer::ChangeDebt(int const percent)
 {
-    debt += (int) (debt * percent / 100.0);
+    debt -= abs((debt) * percent / 100);
 }
 
 bool Consumer::operator==(Consumer con) { return address == con.GetAddress(); }
@@ -101,7 +102,7 @@ void Consumer::operator=(Consumer con)
     mobileNumber = con.mobileNumber;
     debt = con.debt;
 }
-Consumer::operator string() { return to_string(mobileNumber); }
+Consumer::operator string() const { return to_string(mobileNumber); }
 
 
 void Consumer::input(istream& is)

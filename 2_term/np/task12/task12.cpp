@@ -1,5 +1,6 @@
 #include <iostream>
 #include <fstream>
+#include <string>
 #include "consumer_op.h"
 
 using namespace std;
@@ -20,6 +21,8 @@ int main()
         fin >> con[i];
 
     BubbleSort(con, n);
+
+    string all_consumers = "";
     for (size_t i = 0; i < n; i++)
     {
         fout << "Consumer " << i + 1 << endl;
@@ -27,7 +30,9 @@ int main()
         con[i].ChangeDebt(20);
         int debt = con[i].GetDebt();
         fout << "Changed debt: " << debt << "\n\n";
+        i < n - 1 ? all_consumers += (string) con[i] + ", " : all_consumers += (string) con[i];
     }
+    fout << "All numbers: " << all_consumers << endl;
 
     cout << "Success\n";
     fin.close();

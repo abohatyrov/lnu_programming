@@ -3,6 +3,7 @@
 // Сортування масиву виконувати за спаданням із використанням методу бульбашки.
 #include <iostream>
 #include <string>
+#include <cmath>
 using namespace std;
 
 class Consumer
@@ -36,7 +37,7 @@ public:
     bool operator<(Consumer);
     bool operator<=(Consumer);
     void operator=(Consumer);
-    operator string();
+    operator string() const;
 
     friend istream& operator >>(istream&, Consumer&);
     friend ostream& operator <<(ostream&, Consumer&);
@@ -83,7 +84,7 @@ bool Consumer::CheckNumber()
 
 void Consumer::ChangeDebt(int percent)
 {
-    debt += (int) (debt * percent / 100.0);
+    debt -= abs((debt) * percent / 100);
 }
 
 bool Consumer::operator==(Consumer con) { return address == con.GetAddress(); }
@@ -98,7 +99,7 @@ void Consumer::operator=(Consumer con)
     mobileNumber = con.mobileNumber;
     debt = con.debt;
 }
-Consumer::operator string() { return to_string(mobileNumber); }
+Consumer::operator string() const { return to_string(mobileNumber); }
 
 istream& operator >>(istream& is, Consumer& con)
 {

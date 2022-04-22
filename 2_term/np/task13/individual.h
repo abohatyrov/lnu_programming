@@ -1,0 +1,90 @@
+// Похідні класи “Юридичний” (поле: кількість телефонних номерів) та “Фізичний” (поле: прізвище, ім’я, по-батькові у вигляді однієї стрічки).
+#include <iostream>
+#include <string>
+#include "consumer_sub.h"
+
+using namespace std;
+
+class Individual : public Consumer
+{
+private:
+    string fullName;
+public:
+    Individual();
+    Individual(int, string, long, int, string);
+    Individual(Individual&);
+
+    string GetCountOfNumbers();
+    void SetCountOfNumbers(int);
+
+    void ChangeDebt(int const) override;
+    string BreakIntoWords();
+
+    void input(istream&) override;
+    void print(ostream&) override;
+
+    friend istream& operator >>(istream&, Individual&);
+    friend ostream& operator <<(ostream&, Individual&);
+};
+
+Individual::Individual():Consumer()
+{
+    fullName = "John Doe";
+}
+
+Individual::Individual(int _cn, string _a, long _mn, int _d, string _fullName):Consumer(_cn, _a, _mn, _d)
+{
+    fullName = _fullName;
+}
+
+Individual::Individual(Individual& ind):Consumer(ind.GetConsumerNumber(), ind.GetAddress(), ind.GetMobileNumber(), ind.GetDebt())
+{
+    fullName = ind.fullName;
+}
+
+string Individual::GetCountOfNumbers() { return fullName; }
+
+void Individual::SetCountOfNumbers(int _fn) { fullName = _fn; }
+
+void Individual::ChangeDebt(int const percent)
+{
+    if (Consumer::GetDebt() < 1000)
+        Consumer::ChangeDebt(percent);
+}
+
+string Individual::BreakIntoWords()
+{
+    int pos = 0, pos1;
+    string str = "";
+    for (int i = 0; i < sizeof(fullName); i++)
+        if (fullName[i] == ' ')
+        {
+            pos1 = i;
+            str += fullName.substr(pos, pos1 - pos);
+            pos = pos1 + 1;
+        }
+}
+
+void Individual::input(istream& is)
+{
+    Consumer::input(is);
+    is >> fullName;
+}
+
+void Individual::print(ostream& os)
+{
+    Consumer::print(os);
+    os << "Full name: " << fullName << endl;
+}
+
+istream& operator >>(istream& is, Individual& leg)
+{
+    leg.input(is);
+    return is;
+}
+
+ostream& operator <<(ostream& os, Individual& leg)
+{
+    leg.print(os);
+    return os;
+}

@@ -9,6 +9,7 @@
 // · зміни стану заборгованості за заданою пільгою (відсоток зміни заборгованості передається як параметр методу).
 #include <iostream>
 #include <string>
+#include <cmath>
 using namespace std;
 
 class Consumer
@@ -81,7 +82,7 @@ bool Consumer::CheckNumber()
 
 void Consumer::ChangeDebt(int percent)
 {
-    debt += (int) (debt * percent / 100.0);
+    debt -= abs((debt) * percent / 100);
 }
 
 istream& operator >>(istream& is, Consumer& con)
