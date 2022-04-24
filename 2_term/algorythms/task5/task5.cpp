@@ -42,6 +42,8 @@ int main()
         if (i % row == 0 && i != 0) cout << "  ";
         cout << path[i] << ' ';
     }
+
+    cout << endl;
 }
 
 // 4 6
