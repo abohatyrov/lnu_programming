@@ -1,49 +1,72 @@
 #include <iostream>
+#include <fstream>
+#include <string>
+#include "car.h"
 
 using namespace std;
 
-void MergeSort(int*, int, int);
-void Merge(int*, int, int, int);
+void MergeSort(Car*, int, int, int);
+void Merge(Car*, int, int, int, int);
+int BinarySearch(Car*, int, int, int, int);
+
 
 int main()
 {
+    ifstream fin("input.txt");
+    ofstream fout("output.txt");
+
+
     int n;
-    cout << "Enter size of array: "; cin >> n;
+    // cout << "Enter count of cars: "; 
+    fin >> n;
 
-    int* arr = new int[n];
-    cout << "Enter array:\n";
+    Car* arr = new Car[n];
+    // cout << "Enter cars:\n";
     for (int i = 0; i < n; i++)
-        cin >> arr[i];
+        fin >> arr[i];
 
-    MergeSort(arr, 0, n - 1);
+    int s;
+    cout << "Select how to sort ([0] label, [1] year, [2] price): "; cin >> s;
 
-    cout << "Sorted array:\n";
+    MergeSort(arr, s, 0, n - 1);
+
+    fout << "Sorted array:\n";
     for (int i = 0; i < n; i++)
-        cout << arr[i] << ' ';
+        fout << "Car" << i + 1 << endl << arr[i] << endl;
 
-    cout << endl;
+    int i_find; fin >> i_find;
+    int l; l = BinarySearch(arr, i_find, s, 0, n - 1);
+    if (l == -1)
+        fout << "Not find.";
+    else
+        fout << "Here is your element:\n" << arr[l];
+
+
+    cout << "Success\n";
+    fin.close();
+    fout.close();
 }
 
-void MergeSort(int* arr, int l, int r)
+void MergeSort(Car* arr, int s, int l, int r)
 {
     if (l < r)
     {
         int m = l + (r - l) / 2;
 
-        MergeSort(arr, l, m);
-        MergeSort(arr, m + 1, r);
+        MergeSort(arr, s, l, m);
+        MergeSort(arr, s, m + 1, r);
 
-        Merge(arr, l, m, r);
+        Merge(arr, s, l, m, r);
     }
 }
 
-void Merge(int* arr, int p, int q, int r)
+void Merge(Car* arr, int s, int p, int q, int r)
 {
     int n1 = q - p + 1;
     int n2 = r - q;
 
-    int* l = new int[n1];
-    int* m = new int[n2];
+    Car* l = new Car[n1];
+    Car* m = new Car[n2];
 
     for (int i = 0; i < n1; i++)
         l[i] = arr[p + i];
@@ -54,17 +77,28 @@ void Merge(int* arr, int p, int q, int r)
 
     while (i < n1 && j < n2)
     {
-        if (l[i] <= m[j])
+        if (s == 0 && l[i].GetLabel() <= m[j].GetLabel())
         {
-            arr[k] = l[i];
+            arr[k] = Car(l[i]);
             i++;
-        } else
+        } 
+        else if (s == 1 && l[i].GetYear() <= m[j].GetYear())
         {
-            arr[k] = m[j];
+            arr[k] = Car(l[i]);
+            i++;
+        } 
+        else if (s == 2 && l[i].GetPrice() <= m[j].GetPrice())
+        {
+            arr[k] = Car(l[i]);
+            i++;
+        } 
+        else
+        {
+            arr[k] = Car(m[j]);
             j++;
         }
         k++;
-    }
+    } 
 
     while (i < n1)
     {
@@ -79,4 +113,22 @@ void Merge(int* arr, int p, int q, int r)
         j++;
         k++;
     }
+}
+
+int BinarySearch(Car* arr, int i_find, int s, int l, int r)
+{
+    while (l < r)
+    {
+        int m = (l + r) / 2;
+
+        if (s == 0 && arr[i_find].GetLabel() > arr[m].GetLabel()) l = m + 1; 
+        else if (s == 1 && arr[i_find].GetYear() > arr[m].GetYear()) l = m + 1; 
+        else if (s == 2 && arr[i_find].GetPrice() > arr[m].GetPrice()) l = m + 1; 
+        else r = m;
+    }
+
+    if (s == 0 && arr[l].GetLabel() == arr[i_find].GetLabel()) return l; 
+    else if (s == 1 && arr[l].GetPrice() == arr[i_find].GetYear()) return l; 
+    else if (s == 2 && arr[l].GetYear() == arr[i_find].GetPrice()) return l; 
+    else return -1;
 }

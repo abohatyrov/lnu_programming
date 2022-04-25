@@ -1,0 +1,27 @@
+Sorted array:
+Car1
+Label: Subaru WRX
+Year: 1998
+Price: 9023.52
+
+Car2
+Label: BMW X5 M
+Year: 2012
+Price: 83919.1
+
+Car3
+Label: Toyota RAW 4
+Year: 2014
+Price: 62164
+
+Car4
+Label: Audi RS 3
+Year: 2017
+Price: 75239.9
+
+Car5
+Label: Jaguar F-Type
+Year: 2019
+Price: 95124.9
+
+Not find.
