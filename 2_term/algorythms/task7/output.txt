@@ -1,27 +1,47 @@
 Sorted array:
-Car1
-Label: Subaru WRX
-Year: 1998
-Price: 9023.52
-
-Car2
-Label: BMW X5 M
-Year: 2012
-Price: 83919.1
-
-Car3
-Label: Toyota RAW 4
-Year: 2014
-Price: 62164
-
-Car4
+Car 1
 Label: Audi RS 3
 Year: 2017
 Price: 75239.9
 
-Car5
+Car 2
+Label: BMW X5 M
+Year: 2012
+Price: 83919.1
+
+Car 3
 Label: Jaguar F-Type
 Year: 2019
 Price: 95124.9
 
-Not find.
+Car 4
+Label: Nissan Leaf
+Year: 2010
+Price: 7752.25
+
+Car 5
+Label: Porshe Taycan
+Year: 2019
+Price: 85252.8
+
+Car 6
+Label: Subaru WRX
+Year: 1998
+Price: 9023.52
+
+Car 7
+Label: Toyota Mark II
+Year: 1976
+Price: 6923.85
+
+Car 8
+Label: Toyota RAW 4
+Year: 2014
+Price: 62164
+
+=======================================
+
+Here is your element on position 0:
+Label: Audi RS 3
+Year: 2017
+Price: 75239.9

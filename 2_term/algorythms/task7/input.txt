@@ -1,10 +1,10 @@
-5
+8
 BMW X5 M
 2012
 83919.14
 Toyota RAW 4
 2014
-62164.00
+62164
 Subaru WRX
 1998
 9023.52
@@ -14,4 +14,12 @@ Audi RS 3
 Jaguar F-Type
 2019
 95124.92
-2
+Nissan Leaf
+2010
+7752.25
+Toyota Mark II
+1976
+6923.85
+Porshe Taycan
+2019
+85252.83
