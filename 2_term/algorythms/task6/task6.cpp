@@ -16,7 +16,6 @@ unsigned long long Binom(int m, int n)
 {
     if (m == 0 || m == n) return 1;
     else if (m == 1) return n;
-    else if (m > n / 2) m = n - m;
-
+    
     return Binom(m, n - 1) + Binom(m - 1, n - 1);
 }
