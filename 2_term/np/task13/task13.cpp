@@ -46,6 +46,7 @@ int main()
     fout << "======== Individual ========\n\n";
 
     Individual* ind = new Individual[n];
+    
     for (size_t i = 0; i < n; i++)
         fin >> ind[i];
 
