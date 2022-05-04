@@ -4,6 +4,8 @@
         "cmath": "cpp",
         "iosfwd": "cpp",
         "xstring": "cpp",
-        "string": "cpp"
+        "string": "cpp",
+        "xutility": "cpp",
+        "iterator": "cpp"
     }
 }
