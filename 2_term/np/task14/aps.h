@@ -9,6 +9,7 @@
 class Aps
 {
 private:
+    string name;
     int n;
     Consumer* consumers = new Consumer[n];
 public:

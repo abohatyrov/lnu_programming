@@ -1,69 +1,12 @@
-5
 38
 Heroiv Dnipra 17
 38086729
 24
-49
-Medovoi Pechery 39
-49867602
--23
-51
-Nadpil'na 196
-51943563
-0
-83
-Kryvalivs'ka 93
-83004187
--2
-44
-Serhia Ambrosa 3
-44404044
-94
-74
-Stepana Bandery 93
-74958373
-1000
-25
 53
 Verhnia Horova 52
 53867501
 24
 3
-96
-Nyzhnia Horova 127
-96847302
-0
-13
-84
-Vyshneva 82
-84958296
--19
-6
-83
-Krylova 12
-83869201
-1000
-12
-38
-Heroiv Dnipra 17
-38086729
-24
-Ivan Martynovych Bryukhovetsky
-49
-Medovoi Pechery 39
-49867602
--23
-Matvii Petrovich Kolosovs'kyi
-51
-Nadpil'na 196
-51943563
-0
-Pavlo Yakovych Pudenko
-83
-Kryvalivs'ka 93
-83004187
--2
-Petro Konashevych' Sahaidachnyi
 44
 Serhia Ambrosa 3
 44404044
