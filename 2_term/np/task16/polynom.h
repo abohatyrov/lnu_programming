@@ -1,3 +1,4 @@
+#pragma once
 #include <iostream>
 #include <string>
 
@@ -117,7 +118,7 @@ bool Polynom::operator==(Polynom pol)
             mult = false;
             break;
         }
-    return mult ? true : false;
+    return mult;
 }
 
 bool Polynom::operator!=(Polynom pol)
@@ -131,7 +132,7 @@ bool Polynom::operator!=(Polynom pol)
             mult = true;
             break;
         }
-    return mult ? true : false;
+    return mult;
 }
 
 Polynom Polynom::derivative()
