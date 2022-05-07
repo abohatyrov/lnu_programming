@@ -1,0 +1,28 @@
+First polynom: 3x^2 - x + 2 
+Second polynom: 7x^4 + 5x^3 + 3x^2 - x + 2 
+
+Sum (+):
+7x^4 + 5x^3 + 6x^2 - 2x + 4 
+
+Difference (-):
+7x^4 - 5x^3 
+
+Product (*):
+21x^6 + 8x^5 + 18x^4 + 4x^3 + 13x^2 - 4x + 4 
+
+Polynoms values:
+pol1 | pol2
+-----|-----
+7	 |	83
+13	 |	541
+19	 |	1711
+25	 |	3929
+
+Polynoms aren't equal
+
+pol1 | pol2
+-----|-----
+28	 |	332
+52	 |	2164
+76	 |	6844
+100	 |	15716
