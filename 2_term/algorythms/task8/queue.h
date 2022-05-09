@@ -4,80 +4,83 @@
 
 using namespace std;
 
+template <typename T>
+struct node
+{
+    T data;
+    node* next;
+};
+
+template <typename T>
 class Queue
 {
-private:
-    int* arr;
-    int n;
+    node<T>* beg;
+    node<T>* end;
 public:
-    Queue() { n = 0; }
-    Queue(const Queue& obj)
-    {
-        n = obj.n;
-        arr = new int[n];
+    Queue(): beg(NULL), end(NULL) {}
 
-        for (int i = 0; i < n; i++)
-            arr[i] = obj.arr[i];
+    void push(const T obj)
+    {
+        node<T>* p = new node<T>;
+        p->data = obj;
+        p->next = nullptr;
+        if (end) end->next = p;
+        else beg = p;
+        end = p;
     }
 
-    void push(int item)
+    void pop()
     {
-        int* arr2 = arr;
+        node<T>* p = new node<T>;
+        p = beg->next;
+        delete beg;
+        beg = p;
+    }
 
-        arr = new int[n + 1];
-        for (int i = 0; i < n; i++)
-            arr[i] = arr2[i];
-        arr[n] = item;
-        n++;
+    T top()
+    {
+        return end->data;
+    }
 
+    int size()
+    {
+        if (!end) return 0;
+        node<T>* p = beg;
+        int i = 0;
+        do
+        {
+            i++;
+        } while (p = p->next);
+        return i;
+    }
+
+    void pop_i()
+    {
         
     }
 
-    int pop()
+    T operator[](const int i)
     {
-        if (n == 0) return 0;
-
-        int item = arr[0];
-
-        int* arr2 = new int[n - 1];
-        n--;
-        for (int i = 0; i < n; i++)
-            arr2[i] = arr[i + 1];
-
-        if (n > 0) delete[] arr;
-        arr = arr2;
-
-        return item;
-    }
-
-    int GetFirstItem()
-    {
-        if (n > 0)
-            return arr[0];
-        else
-            return 0;
-    }
-
-    int GetSize() { return n; }
-
-    void clear()
-    {
-        if (n > 0)
+        node<T>* p = beg;
+        int j = 0;
+        do
         {
-            delete[] arr;
-            n = 0;
-        }
+            if (j == i) break;
+            j++;
+            p = p->next;
+        } while (p->next != NULL);
+
+        return j <= i ? p->data : 0;
     }
 
-    Queue& operator=(const Queue& obj)
+    friend ostream& operator <<(ostream& os, Queue& q)
     {
-        if (n > 0) delete[] arr;
-
-        arr = new int[obj.n];
-        n = obj.n;
-        for (int i = 0; i < n; i++)
-            arr[i] = obj.arr[i];
-
-        return *this;
-     }
+        node<T>* p = q.beg;
+        do
+        {
+            os << p->data << ' ';
+        } while (p = p->next);
+        cout << endl;
+        return os;
+    }
 };
