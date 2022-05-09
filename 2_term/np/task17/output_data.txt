@@ -1,6 +1,9 @@
 List isn't empty.
 
-List: 2.5 2.65 7.5 9.1 7.5 3.6 1.6 7.5 0.7 3 7.3
+List: 2.5 2.65 7.5 9.1 7.5 3.6 1.6 7.5 0.7 3 7.3 
+
+Delete last element
+List: 2.5 2.65 7.5 9.1 7.5 3.6 1.6 7.5 0.7 3 
 
 Delete first element
 List: 2.65 7.5 9.1 7.5 3.6 1.6 7.5 0.7 3 

@@ -18,6 +18,7 @@ class List
     node<T>* end;
 public:
     List(): beg(NULL), end(NULL) {}
+
     List(istream& is)
     {
         beg = NULL;
@@ -96,31 +97,35 @@ public:
         }
     }
 
-    T sum()
+    void clear()
     {
-        if(!beg) return -1;
-        return beg->data + end->data;
+        
     }
 
-    void del_all_e(const T e)
+    int size()
     {
-        if(!beg) return;
-        
-        node<T> *p = beg, *q = p->next;
-        while(q)
+        if (!end) return 0;
+        node<T>* p = beg;
+        int i = 0;
+        do
         {
-            if (q->data == e)
-            {
-                p->next = q->next;
-                delete q;
-                q = p->next;
-            }
-            else 
-            {
-                p = q;
-                q = q->next;
-            }
-        }
+            i++;
+        } while (p = p->next);
+        return i;
+    }
+
+    int operator[](const int i)
+    {
+        node<T>* p = beg;
+        int j = 0;
+        do
+        {
+            if (j == i) break;
+            j++;
+            p = p->next;
+        } while (p->next != NULL);
+
+        return j <= i ? p->data : 0;
     }
 
     friend ostream& operator <<(ostream& os, const List<T>& lst)
@@ -138,3 +143,4 @@ public:
         return os;
     }
 };
+

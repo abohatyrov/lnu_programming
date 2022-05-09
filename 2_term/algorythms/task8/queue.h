@@ -54,11 +54,6 @@ public:
         return i;
     }
 
-    void pop_i()
-    {
-        
-    }
-
     T operator[](const int i)
     {
         node<T>* p = beg;
