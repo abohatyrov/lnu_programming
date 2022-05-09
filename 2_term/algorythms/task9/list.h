@@ -97,10 +97,7 @@ public:
         }
     }
 
-    void clear()
-    {
-        
-    }
+    node<T>* begin() { return beg; }
 
     int size()
     {
@@ -143,4 +140,3 @@ public:
         return os;
     }
 };
-
