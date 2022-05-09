@@ -29,17 +29,25 @@ int main()
     {
         int a = q[i];
         a = round(sqrt(a));
-        if (a * a == q[i])
+        if (a != 0 && a * a == q[i])
             cout << q[i] << ' ';
     }
     cout << endl;
 
-    cout << "\nFull squares: ";
+    cout << "\nNegative values: ";
+    for (int i = 0; i < q.size(); i++)
+    {
+        if (q[i] < 0)
+            cout << q[i] << ' ';
+    }
+    cout << endl;
+
+    cout << "\nOther values: ";
     for (int i = 0; i < q.size(); i++)
     {
         int a = q[i];
         a = round(sqrt(a));
-        if (a * a == q[i])
+        if (q[i] >= 0 && (a == 0 || a * a != q[i]))
             cout << q[i] << ' ';
     }
     cout << endl;
