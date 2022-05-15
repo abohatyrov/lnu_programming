@@ -57,16 +57,16 @@ int main()
 
     // Output
 
-    fout << "Sorted array:\n";
+    cout << "Sorted array:\n";
     for (int i = 0; i < n; i++)
-        fout << "Car " << i + 1 << endl << arr[i] << endl;
+        cout << "Car " << i + 1 << endl << arr[i] << endl;
 
-    fout << "=======================================\n\n";
+    cout << "=======================================\n\n";
 
     if (l == -1)
-        fout << "Not found.";
+        cout << "Not found.";
     else
-        fout << "Here is your element on position " << l << ":\n" << arr[l];
+        cout << "Here is your element on position " << l << ":\n" << arr[l];
 
 
     cout << "Success\n";

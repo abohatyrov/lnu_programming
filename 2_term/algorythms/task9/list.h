@@ -5,18 +5,17 @@
 using namespace std;
 
 template <typename T>
-struct node
-{
-    T data;
-    node *next;
-};
-
-template <typename T>
 class List
 {
-    node<T>* beg;
-    node<T>* end;
+    struct node
+    {
+        T data;
+        node *next;
+    };
+    node* beg;
+    node* end;
 public:
+    
     List(): beg(NULL), end(NULL) {}
 
     List(istream& is)
@@ -34,7 +33,7 @@ public:
     ~List()
     {
         if(!beg) return;
-        node<T>* q;
+        node* q;
         do
         {
             q=beg;
@@ -51,7 +50,7 @@ public:
 
     void add_begin(const T t)
     {
-        node<T>* r = new node<T>;
+        node* r = new node;
         r->data = t;
         r->next = beg;
         if (!beg)
@@ -64,7 +63,7 @@ public:
 
     void add_end(const T t)
     {
-        node<T>* r = new node<T>;
+        node* r = new node;
         r->data = t;
         r->next = NULL;
         if (end) end->next = r;
@@ -76,7 +75,7 @@ public:
     {
         if(!beg) return;
 
-        node<T>* q = beg->next;
+        node* q = beg->next;
         delete beg;
         beg = q;
     }
@@ -85,7 +84,7 @@ public:
     {
         if(!beg) return;
 
-        node<T>* q = beg;
+        node* q = beg;
         while(q = q->next)
         {
             if (q->next == end)
@@ -97,12 +96,12 @@ public:
         }
     }
 
-    node<T>* begin() { return beg; }
+    node* begin() { return beg; }
 
     int size()
     {
         if (!end) return 0;
-        node<T>* p = beg;
+        node* p = beg;
         int i = 0;
         do
         {
@@ -113,7 +112,7 @@ public:
 
     int operator[](const int i)
     {
-        node<T>* p = beg;
+        node* p = beg;
         int j = 0;
         do
         {
@@ -125,12 +124,28 @@ public:
         return j <= i ? p->data : 0;
     }
 
+    void clear()
+    {
+        node* p = beg;
+        node* q = p->next;
+        do
+        {
+            if (p->data == q->data)
+            {
+                p->next = q->next;
+                delete q;
+                q = p->next;
+                continue;
+            }
+            p = p->next;
+        } while (q = p->next);
+    }
+
     friend ostream& operator <<(ostream& os, const List<T>& lst)
     {
         if (!lst.beg) return os << "List is empty.";
 
-        os << "List: ";
-        node<T>* q = lst.beg;
+        node* q = lst.beg;
         do
         {
             os << q->data << ' ';
@@ -140,3 +155,4 @@ public:
         return os;
     }
 };
+

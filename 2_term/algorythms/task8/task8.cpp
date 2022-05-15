@@ -24,33 +24,24 @@ int main()
     
     cout << "List: " << q;
 
-    cout << "\nFull squares: ";
-    for (int i = 0; i < q.size(); i++)
-    {
-        int a = q[i];
-        a = round(sqrt(a));
-        if (a != 0 && a * a == q[i])
-            cout << q[i] << ' ';
-    }
-    cout << endl;
+    Queue<int> q1;
+    Queue<int> q2;
+    Queue<int> q3;
 
-    cout << "\nNegative values: ";
     for (int i = 0; i < q.size(); i++)
     {
-        if (q[i] < 0)
-            cout << q[i] << ' ';
+        if (q[i] != 0 && sqrt(q[i]) * sqrt(q[i]) == q[i])
+            q1.push(q[i]);
+        else if (q[i] < 0)
+            q2.push(q[i]);
+        else
+            q3.push(q[i]);
     }
-    cout << endl;
 
-    cout << "\nOther values: ";
-    for (int i = 0; i < q.size(); i++)
-    {
-        int a = q[i];
-        a = round(sqrt(a));
-        if (q[i] >= 0 && (a == 0 || a * a != q[i]))
-            cout << q[i] << ' ';
-    }
-    cout << endl;
+    cout << "\nFull squares: " << q1;
+    cout << "\nNegative values: " << q2;
+    cout << "\nOther values: " << q3;
+
 
 
     cout << "\nSuccess\n";
