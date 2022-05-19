@@ -13,7 +13,7 @@ private:
 public:
     Individual();
     Individual(int, string, long, int, string);
-    Individual(Individual&);
+    // Individual(Individual&);
 
     string GetCountOfNumbers();
     void SetCountOfNumbers(int);
@@ -38,10 +38,10 @@ Individual::Individual(int _cn, string _a, long _mn, int _d, string _fullName):C
     fullName = _fullName;
 }
 
-Individual::Individual(Individual& ind):Consumer(ind.GetConsumerNumber(), ind.GetAddress(), ind.GetMobileNumber(), ind.GetDebt())
-{
-    fullName = ind.fullName;
-}
+// Individual::Individual(Individual& ind):Consumer(ind.GetConsumerNumber(), ind.GetAddress(), ind.GetMobileNumber(), ind.GetDebt())
+// {
+//     fullName = ind.fullName;
+// }
 
 string Individual::GetCountOfNumbers() { return fullName; }
 

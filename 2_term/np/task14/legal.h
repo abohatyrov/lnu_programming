@@ -13,7 +13,7 @@ private:
 public:
     Legal();
     Legal(int, string, long, int, int);
-    Legal(Legal&);
+    // Legal(Legal&);
 
     int GetCountOfNumbers();
     void SetCountOfNumbers(int);
@@ -37,10 +37,10 @@ Legal::Legal(int _cn, string _a, long _mn, int _d, int _countOfNumbers):Consumer
     countOfNumbers = _countOfNumbers;
 }
 
-Legal::Legal(Legal& leg):Consumer(leg.GetConsumerNumber(), leg.GetAddress(), leg.GetMobileNumber(), leg.GetDebt())
-{
-    countOfNumbers = leg.countOfNumbers;
-}
+// Legal::Legal(Legal& leg):Consumer(leg.GetConsumerNumber(), leg.GetAddress(), leg.GetMobileNumber(), leg.GetDebt())
+// {
+//     countOfNumbers = leg.countOfNumbers;
+// }
 
 int Legal::GetCountOfNumbers() { return countOfNumbers; }
 

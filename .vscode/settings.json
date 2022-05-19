@@ -46,6 +46,8 @@
         "xlocnum": "cpp",
         "xstddef": "cpp",
         "queue": "cpp",
-        "deque": "cpp"
+        "deque": "cpp",
+        "list": "cpp",
+        "algorithm": "cpp"
     }
 }

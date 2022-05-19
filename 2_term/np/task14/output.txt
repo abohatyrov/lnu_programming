@@ -1,136 +1,25 @@
-======== Consumer ========
+Consumers:
 
-Consumer 1
-Consumer number: 38
-Your address: Heroiv Dnipra 17
-Mobile number: +38086729
-Your debt: 24
-Changed debt: 20
+Consumer number: 42
+Your address: Heroiv Dnipra 1
+Mobile number: +42958671
+Your debt: 21
 
-Consumer 2
-Consumer number: 49
-Your address: Medovoi Pechery 39
-Mobile number: +49867602
-Your debt: -23
-Changed debt: -27
+Individual:
 
-Consumer 3
-Consumer number: 51
-Your address: Nadpil'na 196
-Mobile number: +51943563
-Your debt: 0
-Changed debt: 0
-
-Consumer 4
-Consumer number: 83
-Your address: Kryvalivs'ka 93
-Mobile number: +83004187
-Your debt: -2
-Changed debt: -2
-
-Consumer 5
-Consumer number: 44
-Your address: Serhia Ambrosa 3
-Mobile number: +44404044
-Your debt: 94
-Changed debt: 76
-
-======== Legal ========
-
-Legal consumer 1
-Consumer number: 74
-Your address: Stepana Bandery 93
-Mobile number: +74958373
-Your debt: 1000
-Count of numbers: 25
-Changed debt: 400
-
-Legal consumer 2
-Consumer number: 53
-Your address: Verhnia Horova 52
-Mobile number: +53867501
-Your debt: 24
-Count of numbers: 3
-Changed debt: 20
-
-Legal consumer 3
-Consumer number: 96
-Your address: Nyzhnia Horova 127
-Mobile number: +96847302
-Your debt: 0
-Count of numbers: 13
-Changed debt: 0
-
-Legal consumer 4
-Consumer number: 84
-Your address: Vyshneva 82
-Mobile number: +84958296
-Your debt: -19
-Count of numbers: 6
-Changed debt: -19
-
-Legal consumer 5
-Consumer number: 83
-Your address: Krylova 12
-Mobile number: +83869201
-Your debt: 1000
-Count of numbers: 12
-Changed debt: 640
-
-======== Individual ========
-
-Individual consumer 1
-Full name:
-Ivan
-Martynovych
-Bryukhovetsky
-Consumer number: 38
-Your address: Heroiv Dnipra 17
-Mobile number: +38086729
-Your debt: 24
-Changed debt: 20
-
-Individual consumer 2
-Full name:
-Matvii
-Petrovich
-Kolosovs'kyi
-Consumer number: 49
-Your address: Medovoi Pechery 39
-Mobile number: +49867602
-Your debt: -23
-Changed debt: -27
-
-Individual consumer 3
-Full name:
-Pavlo
-Yakovych
-Pudenko
-Consumer number: 51
-Your address: Nadpil'na 196
-Mobile number: +51943563
-Your debt: 0
-Changed debt: 0
-
-Individual consumer 4
-Full name:
-Petro
-Konashevych'
-Sahaidachnyi
-Consumer number: 83
-Your address: Kryvalivs'ka 93
-Mobile number: +83004187
-Your debt: -2
-Changed debt: -2
-
-Individual consumer 5
 Full name:
 Bohatyrov
 Andrii
 Andriyovych
 Consumer number: 44
-Your address: Serhia Ambrosa 3
+Your address: Serhia Ambrosa 
 Mobile number: +44404044
 Your debt: 1053
-Changed debt: 1053
 
+Legal:
+
+Consumer number: 53
+Your address: Verhnia Horova 5
+Mobile number: +53867501
+Your debt: 24
+Count of numbers: 3

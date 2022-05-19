@@ -45,7 +45,10 @@ public:
 
     bool is_empty()
     {
-        return beg == NULL && end ==NULL;
+        if (beg == NULL && end == NULL)
+            return true;
+        else
+            return false;
     }
 
     void add_begin(const T t)

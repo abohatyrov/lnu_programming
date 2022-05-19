@@ -1,12 +1,22 @@
 #include <iostream>
+#include <fstream>
 #include "aps.h"
 
 using namespace std;
 
 int main()
 {
-    Aps station = Aps();
-    station.add_consumer(cin, "consumer");
-    station.add_consumer(cin, "legal");
-    station.add_consumer(cin, "individual");
+    ifstream fin("input.txt");
+    ofstream fout("output.txt");
+
+
+    Aps station = Aps("Station 1");
+    while (!fin.eof())
+        fin >> station;
+    fout << station;
+
+
+    cout << "Success\n";
+    fin.close();
+    fout.close();
 }

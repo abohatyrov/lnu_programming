@@ -1,14 +1,3 @@
-38
-Heroiv Dnipra 17
-38086729
-24
-53
-Verhnia Horova 52
-53867501
-24
-3
-44
-Serhia Ambrosa 3
-44404044
-1053
-Bohatyrov Andrii Andriyovych
+Consumer 42 42958671 21 Heroiv Dnipra 17
+Legal 53 53867501 24 3 Verhnia Horova 52
+Individual 44 44404044 1053 Bohatyrov Andrii Andriyovych Serhia Ambrosa 3

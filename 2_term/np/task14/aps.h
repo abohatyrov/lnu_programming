@@ -1,73 +1,111 @@
 #pragma once
 #include <iostream>
-#include <fstream>
 #include <string>
+#include <tuple>
+#include <vector>
 #include "consumer_sub.h"
 #include "legal.h"
 #include "individual.h"
 
+typedef tuple<Consumer, Individual, Legal> station;
+
 class Aps
 {
 private:
+    station arr;
     string name;
-    int n;
-    Consumer* consumers = new Consumer[n];
 public:
-    Aps(){}
-    Aps(Consumer[]);
+    Aps(): arr(), name("empty") {}
+    Aps(string _name): arr(), name(_name) {}
+    Aps(const Aps&);
 
     int GetSize();
     void add_consumer(istream&, string);
 
+    friend istream& operator >>(istream&, Aps&);
     friend ostream& operator <<(ostream&, Aps&);
 };
 
-int Aps::GetSize() { return n; }
-
-void Aps::add_consumer(istream& is, string type)
+Aps::Aps(const Aps& aps)
 {
-    int consumerNumber;
-    string address;
-    long mobileNumber;
-    int debt;
-
-    ++n;
-    if (type == "consumer")
-    {
-        is >> consumerNumber;
-        getline(is >> ws, address);
-        is >> mobileNumber;
-        is >> debt;
-        consumers[n-1] = Consumer(consumerNumber, address, mobileNumber, debt);
-    }
-    else if (type == "legal")
-    {
-        int countOfNumbers;
-        is >> consumerNumber;
-        getline(is >> ws, address);
-        is >> mobileNumber;
-        is >> debt;
-        is >> countOfNumbers;
-        consumers[n-1] = Legal(consumerNumber, address, mobileNumber, debt, countOfNumbers);
-    }
-    else if (type == "individual")
-    {
-        string fullName;
-        is >> consumerNumber;
-        getline(is >> ws, address);
-        is >> mobileNumber;
-        is >> debt;
-        getline(is >> ws, fullName);
-        consumers[n-1] = Individual(consumerNumber, address, mobileNumber, debt, fullName);
-    }
+    arr = aps.arr;
+    name = aps.name;
 }
 
-ostream& operator <<(ostream& os, Aps& consumers)
+istream& operator >>(istream& is, Aps& aps)
 {
-    for (int i = 0; i < consumers.GetSize(); i++)
+    string str, type;
+    getline(is >> ws, str);
+
+    int pos = 0, pos1 = str.find(' ');
+    type = str.substr(pos, pos1);
+
+    pos = pos1 + 1;
+    pos1 = str.find(' ', pos);
+    int consumerNumber = stoi(str.substr(pos, pos1 - pos));
+    pos = pos1 + 1;
+    pos1 = str.find(' ', pos);
+    long mobileNumber = stol(str.substr(pos, pos1 - pos));
+    pos = pos1 + 1;
+    pos1 = str.find(' ', pos);
+    int debt = stoi(str.substr(pos, pos1 - pos));
+
+    if (type == "Consumer")
     {
-        os << consumers.consumers[i];
-        cout << endl;
+        pos = pos1 + 1;
+        pos1 = str.size() - 1;
+        string address = str.substr(pos, pos1 - pos);
+        vector<station> v;
+        Consumer new_con(consumerNumber, address, mobileNumber, debt);
+        aps.arr = make_tuple(aps.arr, new_con);
     }
+    else if (type == "Individual")
+    {
+        pos = pos1 + 1;
+        pos1 = str.find(' ', pos);
+        pos1 = str.find(' ', pos1 + 1);
+        pos1 = str.find(' ', pos1 + 1);
+        string fullName = str.substr(pos, pos1 - pos);
+        pos = pos1 + 1;
+        pos1 = str.size() - 1;
+        string address = str.substr(pos, pos1 - pos);
+    
+        Individual new_ind(consumerNumber, address, mobileNumber, debt, fullName);
+        make_tuple(aps.arr, new_ind);
+    }
+    else if (type == "Legal")
+    {
+        pos = pos1 + 1;
+        pos1 = str.find(' ', pos);
+        int countOfNumbers = stoi(str.substr(pos, pos1 - pos));
+        pos = pos1 + 1;
+        pos1 = str.size() - 1;
+        string address = str.substr(pos, pos1 - pos);
+    
+        Legal new_leg(consumerNumber, address, mobileNumber, debt, countOfNumbers);
+        make_tuple(aps.arr, new_leg);
+    }
+    else
+    {
+        cout << "Wrong data\n";
+    }
+
+    return is;
+}
+
+ostream& operator <<(ostream& os, Aps& aps)
+{
+    os << "Consumers:\n\n";
+    for (int i = 0; i < aps.con.size(); i++)
+        os << aps.con[i];
+    
+    os << "\nIndividual:\n\n";
+    for (int i = 0; i < aps.ind.size(); i++)
+        os << aps.ind[i];
+
+    os << "\nLegal:\n\n";
+    for (int i = 0; i < aps.leg.size(); i++)
+        os << aps.leg[i];
+
     return os;
 }
