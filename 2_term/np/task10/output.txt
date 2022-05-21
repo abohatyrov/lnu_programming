@@ -22,6 +22,15 @@ Count: 12
 Price: 3.99
 Full price: 47.88
 
-[+] The most expencive item [+]
+[+] The most expencive items [+]
+
+Jacket
+273
+[+] The most expencive items [+]
+
 Jeans
 506.61
+[+] The most expencive items [+]
+
+T-Shirt
+145.53

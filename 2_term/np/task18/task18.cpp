@@ -22,7 +22,6 @@ int main()
 bool is_brackets_balanced(string str)
 {
     Stack<char> stack;
-    char x;
 
     for (int i = 0; i < str.length(); i++)
     {
@@ -36,22 +35,19 @@ bool is_brackets_balanced(string str)
         switch (str[i])
         {
         case ')':
-            x = stack.top();
-            stack.pop();
-            if (x == '[' || x == '{')
+            if (stack.top() == '[' || stack.top() == '{')
                 return false;
+            stack.pop();
             break;
         case ']':
-            x = stack.top();
-            stack.pop();
-            if (x == '(' || x == '{')
+            if (stack.top() == '(' || stack.top() == '{')
                 return false;
+            stack.pop();
             break;
         case '}':
-            x = stack.top();
-            stack.pop();
-            if (x == '(' || x == '[')
+            if (stack.top() == '(' || stack.top() == '[')
                 return false;
+            stack.pop();
             break;
         }
     }

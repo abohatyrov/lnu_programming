@@ -2,6 +2,7 @@
 #pragma once
 #include <iostream>
 #include <string>
+#include "aps.h"
 #include "consumer_sub.h"
 
 using namespace std;
@@ -13,9 +14,9 @@ private:
 public:
     Individual();
     Individual(int, string, long, int, string);
-    // Individual(Individual&);
+    Individual(Individual&);
 
-    string GetCountOfNumbers();
+    string GetFullName();
     void SetCountOfNumbers(int);
 
     void ChangeDebt(int const) override;
@@ -30,7 +31,7 @@ public:
 
 Individual::Individual():Consumer()
 {
-    fullName = "John Doe";
+    fullName = "John Doe Doe";
 }
 
 Individual::Individual(int _cn, string _a, long _mn, int _d, string _fullName):Consumer(_cn, _a, _mn, _d)
@@ -38,12 +39,12 @@ Individual::Individual(int _cn, string _a, long _mn, int _d, string _fullName):C
     fullName = _fullName;
 }
 
-// Individual::Individual(Individual& ind):Consumer(ind.GetConsumerNumber(), ind.GetAddress(), ind.GetMobileNumber(), ind.GetDebt())
-// {
-//     fullName = ind.fullName;
-// }
+Individual::Individual(Individual& ind):Consumer(ind.GetConsumerNumber(), ind.GetAddress(), ind.GetMobileNumber(), ind.GetDebt())
+{
+    fullName = ind.fullName;
+}
 
-string Individual::GetCountOfNumbers() { return fullName; }
+string Individual::GetFullName() { return fullName; }
 
 void Individual::SetCountOfNumbers(int _fn) { fullName = _fn; }
 

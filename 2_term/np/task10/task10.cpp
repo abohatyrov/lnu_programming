@@ -5,8 +5,6 @@
 
 using namespace std;
 
-Garment The_Most_Expencive(Garment*, int);
-
 int main()
 {
     ifstream fin("input.txt");
@@ -37,8 +35,14 @@ int main()
         fout << "Full price: " << clothing[i].FullPrice() << "\n\n";
     }
 
-    Garment max = The_Most_Expencive(clothing, n);
-    fout << "[+] The most expencive item [+]\n" << max.GetLabel() << endl << max.FullPrice() << endl;
+    for (int i = 0; i < n; i++)
+    {
+        if (clothing[i].FullPrice() > 100)
+        {
+            fout << "[+] The most expencive items [+]\n\n" << clothing[i].GetLabel() << endl << clothing[i].FullPrice() << endl;
+        }
+    }
+    
 
     cout << "[INFO] Success\n";
     fin.close();
@@ -46,14 +50,3 @@ int main()
     return 0;
 }
 
-Garment The_Most_Expencive(Garment* items, int n)
-{
-    Garment max = Garment();
-    for (size_t i = 0; i < n; i++)
-    {
-        double temp = items[i].FullPrice();
-        if (max.FullPrice() < temp)
-            max = items[i];
-    }
-    return max;
-}

@@ -43,7 +43,7 @@ void BubbleSort(Consumer* con, int n)
 {
     for (size_t i = 0; i < n; i++)
         for (size_t j = 0; j < n - 1; j++)
-            if (con[j] < con[j + 1])
+            if (con[j] > con[j + 1])
             {
                 Consumer temp = con[j];
                 con[j] = con[j + 1];

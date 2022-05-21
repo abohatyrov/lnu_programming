@@ -6,6 +6,8 @@
 #include <iostream>
 #include <string>
 #include <cmath>
+#include "aps.h"
+
 using namespace std;
 
 class Consumer
@@ -18,7 +20,7 @@ private:
 public:
     Consumer();
     Consumer(int, string, long, int);
-    // Consumer(Consumer&);
+    Consumer(Consumer&);
 
     void SetConsumerNumber(int);
     void SetAddress(string);
@@ -63,13 +65,13 @@ Consumer::Consumer(int _consumerNumber, string _address, long _mobileNumber, int
     debt = _debt;
 }
 
-// Consumer::Consumer(Consumer& con)
-// {
-//     consumerNumber = con.consumerNumber;
-//     address = con.address;
-//     mobileNumber = con.mobileNumber;
-//     debt = con.debt;
-// }
+Consumer::Consumer(Consumer& con)
+{
+    consumerNumber = con.consumerNumber;
+    address = con.address;
+    mobileNumber = con.mobileNumber;
+    debt = con.debt;
+}
 
 void Consumer::SetConsumerNumber(int cn) { consumerNumber = cn; }
 void Consumer::SetAddress(string _address) { address = _address; }
