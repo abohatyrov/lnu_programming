@@ -2,10 +2,10 @@ Abonent phone station "Station 1"
 
 Legal:		+53867501	 Debt: 24	 Address: Verhnia Horova 52
 Consumer:	+42958671	 Debt: 21	 Address: Heroiv Dnipra 17
-Individual: +44404044	 Debt: 1053	 Address: Serhia Ambrosa 3
 Legal:		+84958296	 Debt: -19	 Address: Vyshneva 82
-Individual: +49867602	 Debt: -23	 Address: Medovoi Pechery 39
+Individual:	+49867602	 Debt: -23	 Address: Medovoi Pechery 39
 Consumer:	+51943563	 Debt: 0	 Address: Nadpil'na 196
+Legal:		+47958596	 Debt: 0	 Address: Shevchenko street 29
 
 ===============================
 Abonent phone station "Station 1"
@@ -20,15 +20,6 @@ Consumer number: 42
 Your address: Heroiv Dnipra 17
 Mobile number: +42958671
 Your debt: 21
-
-Full name:
-Bohatyrov
-Andrii
-Andriyovych
-Consumer number: 44
-Your address: Serhia Ambrosa 3
-Mobile number: +44404044
-Your debt: 1053
 
 Consumer number: 84
 Your address: Vyshneva 82
@@ -50,13 +41,19 @@ Your address: Nadpil'na 196
 Mobile number: +51943563
 Your debt: 0
 
+Consumer number: 47
+Your address: Shevchenko street 29
+Mobile number: +47958596
+Your debt: 0
+Count of numbers: 8
+
 
 ======== Sort by phone ========
 Abonent phone station "Station 1"
 
 Consumer:	+42958671	 Debt: 21	 Address: Heroiv Dnipra 17
-Individual: +44404044	 Debt: 1053	 Address: Serhia Ambrosa 3
-Individual: +49867602	 Debt: -23	 Address: Medovoi Pechery 39
+Legal:		+47958596	 Debt: 0	 Address: Shevchenko street 29
+Individual:	+49867602	 Debt: -23	 Address: Medovoi Pechery 39
 Consumer:	+51943563	 Debt: 0	 Address: Nadpil'na 196
 Legal:		+53867501	 Debt: 24	 Address: Verhnia Horova 52
 Legal:		+84958296	 Debt: -19	 Address: Vyshneva 82
@@ -66,9 +63,9 @@ Legal:		+84958296	 Debt: -19	 Address: Vyshneva 82
 Abonent phone station "Station 1"
 
 Consumer:	+42958671	 Debt: 21	 Address: Heroiv Dnipra 17
-Individual: +49867602	 Debt: -23	 Address: Medovoi Pechery 39
+Individual:	+49867602	 Debt: -23	 Address: Medovoi Pechery 39
 Consumer:	+51943563	 Debt: 0	 Address: Nadpil'na 196
-Individual: +44404044	 Debt: 1053	 Address: Serhia Ambrosa 3
+Legal:		+47958596	 Debt: 0	 Address: Shevchenko street 29
 Legal:		+53867501	 Debt: 24	 Address: Verhnia Horova 52
 Legal:		+84958296	 Debt: -19	 Address: Vyshneva 82
 
@@ -76,24 +73,15 @@ Legal:		+84958296	 Debt: -19	 Address: Vyshneva 82
 ======== Sort by debt ========
 Abonent phone station "Station 1"
 
-Individual: +44404044	 Debt: 1053	 Address: Serhia Ambrosa 3
 Legal:		+53867501	 Debt: 24	 Address: Verhnia Horova 52
 Consumer:	+42958671	 Debt: 21	 Address: Heroiv Dnipra 17
+Legal:		+47958596	 Debt: 0	 Address: Shevchenko street 29
 Consumer:	+51943563	 Debt: 0	 Address: Nadpil'na 196
 Legal:		+84958296	 Debt: -19	 Address: Vyshneva 82
-Individual: +49867602	 Debt: -23	 Address: Medovoi Pechery 39
+Individual:	+49867602	 Debt: -23	 Address: Medovoi Pechery 39
 
 
 ======== Individual ========
-Full name:
-Bohatyrov
-Andrii
-Andriyovych
-Consumer number: 44
-Your address: Serhia Ambrosa 3
-Mobile number: +44404044
-Your debt: 1053
-
 Full name:
 Matvii
 Petrovich
@@ -111,6 +99,12 @@ Mobile number: +53867501
 Your debt: 24
 Count of numbers: 3
 
+Consumer number: 47
+Your address: Shevchenko street 29
+Mobile number: +47958596
+Your debt: 0
+Count of numbers: 8
+
 Consumer number: 84
 Your address: Vyshneva 82
 Mobile number: +84958296
@@ -121,26 +115,26 @@ Count of numbers: 6
 ======== Fee is accrued ========
 Abonent phone station "Station 1"
 
-Individual: +44404044	 Debt: 1053	 Address: Serhia Ambrosa 3
 Legal:		+53867501	 Debt: 20	 Address: Verhnia Horova 52
 Consumer:	+42958671	 Debt: 17	 Address: Heroiv Dnipra 17
+Legal:		+47958596	 Debt: 0	 Address: Shevchenko street 29
 Consumer:	+51943563	 Debt: 0	 Address: Nadpil'na 196
 Legal:		+84958296	 Debt: -19	 Address: Vyshneva 82
-Individual: +49867602	 Debt: -27	 Address: Medovoi Pechery 39
+Individual:	+49867602	 Debt: -27	 Address: Medovoi Pechery 39
 
 
 ======== Station analysis ========
 Big debt:
-Individual: +44404044	 Debt: 1053	 Address: Serhia Ambrosa 3
 Legal:		+53867501	 Debt: 20	 Address: Verhnia Horova 52
 Consumer:	+42958671	 Debt: 17	 Address: Heroiv Dnipra 17
 
 No debt:
+Legal:		+47958596	 Debt: 0	 Address: Shevchenko street 29
 Consumer:	+51943563	 Debt: 0	 Address: Nadpil'na 196
 
 Negative debt:
 Legal:		+84958296	 Debt: -19	 Address: Vyshneva 82
-Individual: +49867602	 Debt: -27	 Address: Medovoi Pechery 39
+Individual:	+49867602	 Debt: -27	 Address: Medovoi Pechery 39
 
 ======== Find by address ========
 Consumer number: 51
@@ -150,30 +144,29 @@ Your debt: 0
 
 
 ======== Find debtors ========
-Individual: +44404044	 Debt: 1053	 Address: Serhia Ambrosa 3
 Legal:		+53867501	 Debt: 20	 Address: Verhnia Horova 52
 Consumer:	+42958671	 Debt: 17	 Address: Heroiv Dnipra 17
 
 ======== Sum of all debt ========
-1044
+-9
 
 ======== Add client ========
 Abonent phone station "Station 1"
 
-Individual: +44404044	 Debt: 1053	 Address: Serhia Ambrosa 3
 Legal:		+53867501	 Debt: 20	 Address: Verhnia Horova 52
 Consumer:	+42958671	 Debt: 17	 Address: Heroiv Dnipra 17
+Legal:		+47958596	 Debt: 0	 Address: Shevchenko street 29
 Consumer:	+51943563	 Debt: 0	 Address: Nadpil'na 196
 Legal:		+84958296	 Debt: -19	 Address: Vyshneva 82
-Individual: +49867602	 Debt: -27	 Address: Medovoi Pechery 39
+Individual:	+49867602	 Debt: -27	 Address: Medovoi Pechery 39
 Legal:		+47958596	 Debt: 0	 Address: Shevchenko street 29
 
 ======== Delete client ========
 Abonent phone station "Station 1"
 
-Individual: +44404044	 Debt: 1053	 Address: Serhia Ambrosa 3
 Legal:		+53867501	 Debt: 20	 Address: Verhnia Horova 52
+Legal:		+47958596	 Debt: 0	 Address: Shevchenko street 29
 Consumer:	+51943563	 Debt: 0	 Address: Nadpil'na 196
 Legal:		+84958296	 Debt: -19	 Address: Vyshneva 82
-Individual: +49867602	 Debt: -27	 Address: Medovoi Pechery 39
+Individual:	+49867602	 Debt: -27	 Address: Medovoi Pechery 39
 Legal:		+47958596	 Debt: 0	 Address: Shevchenko street 29

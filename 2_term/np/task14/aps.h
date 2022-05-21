@@ -133,7 +133,7 @@ void Aps::analysis(ostream& os)
             if (typeid(*station[i]).name() == typeid(Consumer).name())
                 os << "Consumer:\t+" << station[i]->GetMobileNumber() << "\t Debt: " << station[i]->GetDebt() << "\t Address: " << station[i]->GetAddress() << endl;
             else if (typeid(*station[i]).name() == typeid(Individual).name())
-                os << "Individual: +" << station[i]->GetMobileNumber() << "\t Debt: " << station[i]->GetDebt() << "\t Address: " << station[i]->GetAddress() << endl;
+                os << "Individual:\t+" << station[i]->GetMobileNumber() << "\t Debt: " << station[i]->GetDebt() << "\t Address: " << station[i]->GetAddress() << endl;
             else if (typeid(*station[i]).name() == typeid(Legal).name())
                 os << "Legal:\t\t+" << station[i]->GetMobileNumber() << "\t Debt: " << station[i]->GetDebt() << "\t Address: " << station[i]->GetAddress() << endl;
         }
@@ -145,7 +145,7 @@ void Aps::analysis(ostream& os)
             if (typeid(*station[i]).name() == typeid(Consumer).name())
                 os << "Consumer:\t+" << station[i]->GetMobileNumber() << "\t Debt: " << station[i]->GetDebt() << "\t Address: " << station[i]->GetAddress() << endl;
             else if (typeid(*station[i]).name() == typeid(Individual).name())
-                os << "Individual: +" << station[i]->GetMobileNumber() << "\t Debt: " << station[i]->GetDebt() << "\t Address: " << station[i]->GetAddress() << endl;
+                os << "Individual:\t+" << station[i]->GetMobileNumber() << "\t Debt: " << station[i]->GetDebt() << "\t Address: " << station[i]->GetAddress() << endl;
             else if (typeid(*station[i]).name() == typeid(Legal).name())
                 os << "Legal:\t\t+" << station[i]->GetMobileNumber() << "\t Debt: " << station[i]->GetDebt() << "\t Address: " << station[i]->GetAddress() << endl;
         }
@@ -157,7 +157,7 @@ void Aps::analysis(ostream& os)
             if (typeid(*station[i]).name() == typeid(Consumer).name())
                 os << "Consumer:\t+" << station[i]->GetMobileNumber() << "\t Debt: " << station[i]->GetDebt() << "\t Address: " << station[i]->GetAddress() << endl;
             else if (typeid(*station[i]).name() == typeid(Individual).name())
-                os << "Individual: +" << station[i]->GetMobileNumber() << "\t Debt: " << station[i]->GetDebt() << "\t Address: " << station[i]->GetAddress() << endl;
+                os << "Individual:\t+" << station[i]->GetMobileNumber() << "\t Debt: " << station[i]->GetDebt() << "\t Address: " << station[i]->GetAddress() << endl;
             else if (typeid(*station[i]).name() == typeid(Legal).name())
                 os << "Legal:\t\t+" << station[i]->GetMobileNumber() << "\t Debt: " << station[i]->GetDebt() << "\t Address: " << station[i]->GetAddress() << endl;
         }
@@ -177,7 +177,7 @@ void Aps::find_debtors(ostream& os)
             if (typeid(*station[i]).name() == typeid(Consumer).name())
                 os << "Consumer:\t+" << station[i]->GetMobileNumber() << "\t Debt: " << station[i]->GetDebt() << "\t Address: " << station[i]->GetAddress() << endl;
             else if (typeid(*station[i]).name() == typeid(Individual).name())
-                os << "Individual: +" << station[i]->GetMobileNumber() << "\t Debt: " << station[i]->GetDebt() << "\t Address: " << station[i]->GetAddress() << endl;
+                os << "Individual:\t+" << station[i]->GetMobileNumber() << "\t Debt: " << station[i]->GetDebt() << "\t Address: " << station[i]->GetAddress() << endl;
             else if (typeid(*station[i]).name() == typeid(Legal).name())
                 os << "Legal:\t\t+" << station[i]->GetMobileNumber() << "\t Debt: " << station[i]->GetDebt() << "\t Address: " << station[i]->GetAddress() << endl;
 }
@@ -347,7 +347,7 @@ ostream& operator <<(ostream& os, Aps& aps)
         if (typeid(*aps.station[i]).name() == typeid(Consumer).name())
             os << "Consumer:\t+" << aps.station[i]->GetMobileNumber() << "\t Debt: " << aps.station[i]->GetDebt() << "\t Address: " << aps.station[i]->GetAddress() << endl;
         else if (typeid(*aps.station[i]).name() == typeid(Individual).name())
-            os << "Individual: +" << aps.station[i]->GetMobileNumber() << "\t Debt: " << aps.station[i]->GetDebt() << "\t Address: " << aps.station[i]->GetAddress() << endl;
+            os << "Individual:\t+" << aps.station[i]->GetMobileNumber() << "\t Debt: " << aps.station[i]->GetDebt() << "\t Address: " << aps.station[i]->GetAddress() << endl;
         else if (typeid(*aps.station[i]).name() == typeid(Legal).name())
             os << "Legal:\t\t+" << aps.station[i]->GetMobileNumber() << "\t Debt: " << aps.station[i]->GetDebt() << "\t Address: " << aps.station[i]->GetAddress() << endl;
     }
