@@ -1,0 +1,11 @@
+10
+lt 53 53867501 24 3 Verhnia Horova 52
+l 53 53867501 24 3 Verhnia Horova 52
+c 42 42958671 21 Heroiv Dnipra 17
+c s4d2 42958671 21 Heroiv Dnipra 17
+i 44 ew44gw404hda044 1053 Bohatyrov Andrii Andriyovych Serhia Ambrosa 3
+i 44 44404044 1053 Bohatyrov Andrii Andriyovych Serhia Ambrosa 3
+l 84 84958296 -19 6 Vyshneva 82
+i 49 49867602 -23 Matvii Petrovich Kolosovs'kyi Medovoi Pechery 39
+c 51 51943563 0 Nadpil'na 196
+c 51 51943563 null Nadpil'na 196
