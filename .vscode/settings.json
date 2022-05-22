@@ -49,6 +49,7 @@
         "deque": "cpp",
         "list": "cpp",
         "algorithm": "cpp",
-        "variant": "cpp"
+        "variant": "cpp",
+        "numeric": "cpp"
     }
 }
