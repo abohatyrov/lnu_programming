@@ -2,7 +2,7 @@
 
 using namespace std;
 
-// 4 ÂÀĞ²ÀÍÒ
+// 4 ï¿½ï¿½Ğ²ï¿½ï¿½ï¿½
 
 int main()
 {
@@ -16,9 +16,9 @@ int main()
 	cin >> L;
 	cout << "Enter number M: ";
 	cin >> M;
+	cout << "Enter array: ";
 	for (auto i = 0; i < p; i++)
 	{
-		cout << "Enter number: ";
 		cin >> n;
 		arr[i] = n;
 	}

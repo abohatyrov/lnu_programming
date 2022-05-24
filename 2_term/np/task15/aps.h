@@ -278,16 +278,45 @@ void Aps::del_client(long number)
 istream& operator >>(istream& is, Aps& aps)
 {
     ofstream fout("exceptions.txt");
-
+    
+    // int p, r = 0; is >> p;
+    // while (!is.eof())
+    // {
+    //     string s;
+    //     getline(is >> ws, s);
+    //     r++;        
+    // }
+    // is.seekg(0);
+    // if (r > p)
+    // {
+    //     int q;
+    //     is >> q;
+    //     q *= 2;
+    //     aps.n = q;
+    //     cout << p << ' ' << r << ' ' << aps.n << endl;
+    // }
+    // else 
+    //     is >> aps.n;
     is >> aps.n;
     aps.station = new Consumer*[aps.n];
+    
 
     int q = 0;
     for (int i = 0; i < aps.n; i++)
     {
         q++;
         string str;
-        getline(is >> ws, str);
+        
+        try
+        {
+            getline(is >> ws, str);
+        }
+        catch(ifstream::failure e)
+        {
+            cerr << e.what() << '\n';
+            break;
+        }
+        
 
         char type;
         int consumerNumber;
@@ -417,6 +446,7 @@ istream& operator >>(istream& is, Aps& aps)
         }
     }
 
+    fout.close();
     return is;
 }
 
@@ -426,12 +456,19 @@ ostream& operator <<(ostream& os, Aps& aps)
 
     for (int i = 0; i < aps.n; i++)
     {
-        if (typeid(*aps.station[i]).name() == typeid(Consumer).name())
-            os << "Consumer:\t+" << aps.station[i]->GetMobileNumber() << "\t Debt: " << aps.station[i]->GetDebt() << "\t Address: " << aps.station[i]->GetAddress() << endl;
-        else if (typeid(*aps.station[i]).name() == typeid(Individual).name())
-            os << "Individual:\t+" << aps.station[i]->GetMobileNumber() << "\t Debt: " << aps.station[i]->GetDebt() << "\t Address: " << aps.station[i]->GetAddress() << endl;
-        else if (typeid(*aps.station[i]).name() == typeid(Legal).name())
-            os << "Legal:\t\t+" << aps.station[i]->GetMobileNumber() << "\t Debt: " << aps.station[i]->GetDebt() << "\t Address: " << aps.station[i]->GetAddress() << endl;
+        try
+        {
+            if (typeid(*aps.station[i]).name() == typeid(Consumer).name())
+                os << "Consumer:\t+" << aps.station[i]->GetMobileNumber() << "\t Debt: " << aps.station[i]->GetDebt() << "\t Address: " << aps.station[i]->GetAddress() << endl;
+            else if (typeid(*aps.station[i]).name() == typeid(Individual).name())
+                os << "Individual:\t+" << aps.station[i]->GetMobileNumber() << "\t Debt: " << aps.station[i]->GetDebt() << "\t Address: " << aps.station[i]->GetAddress() << endl;
+            else if (typeid(*aps.station[i]).name() == typeid(Legal).name())
+                os << "Legal:\t\t+" << aps.station[i]->GetMobileNumber() << "\t Debt: " << aps.station[i]->GetDebt() << "\t Address: " << aps.station[i]->GetAddress() << endl;
+        }
+        catch(exception& e)
+        {
+            cerr << e.what() << '\n';
+        }
     }
 
     return os;

@@ -1,10 +1,10 @@
 #include <iostream>
 using namespace std;
-// ВАРІАНТ 4
+// пїЅпїЅРІпїЅпїЅпїЅ 4
 
-int main() { // Завдання 1
+int main() { // пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ 1
 	int a, b, c, d;
-	cin >> a >> b >> c >> d;
+	cout << "a, b, c, d: "; cin >> a >> b >> c >> d;
 	if (a == d) {
 		cout << "a = d, " << a << endl;
 	}
@@ -28,11 +28,19 @@ int main() { // Завдання 1
 			cout << "a, b, c != d, " << "max = d - c, " << c << endl;
 		}
 	}
+	int x;
+	cout << "x: "; cin >> x;
+	if (x <= 1) {
+		cout << x * x + 1 << endl;
+	}
+	else {
+		cout << 1 / (double(x) + 6) << endl;
+	}
 	return 0;
 }
 
 /*
-int main() { // Завдання 2
+int main() { // пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ 2
 	int x;
 	cin >> x;
 	if (x <= 1) {

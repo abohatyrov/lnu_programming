@@ -61,7 +61,7 @@ int main()
 
     copy(v.begin(), v.end(), ostream_iterator<Consumer>(cout, "\n"));
 
-    auto lambda = [&](int sum, Consumer con2) { return sum + con2.GetDebt(); };
+    auto lambda = [](int sum, Consumer con2) { return sum + con2.GetDebt(); };
     int sum = accumulate(v.begin(), v.end(), 0, lambda);
 
     cout << "Sum: " << sum << "\n\n";
@@ -70,11 +70,11 @@ int main()
     char save; cin >> save;
     if (save == 'y')
     {
-        copy(v.begin(), v.end(), ostream_iterator<Consumer>(cout, "\n"));
+        copy(v.begin(), v.end(), ostream_iterator<Consumer>(fout, "\n"));
         fout << "Sum: " << sum;
     }
     else
-        copy(v.begin(), v.end(), ostream_iterator<Consumer>(cout, "\n"));
+        copy(v.begin(), v.end(), ostream_iterator<Consumer>(fout, "\n"));
 
 
     cout << "Success\n";
