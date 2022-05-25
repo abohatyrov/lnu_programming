@@ -1,5 +1,5 @@
-WINNER
-King
+Arithmetic mean: 2.6
+Count of elments > 2.6: 2.7, 4.5, 3.1
 
 
 Brown
